@@ -6,21 +6,41 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 01:31:43 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/08/03 03:31:39 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/08/03 23:15:09 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+#include "minishell.h"
+
+static int	is_n_flag(const char *str)
+{
+	if (*str != '-')
+		return (0);
+	str++;
+	while (*str == 'n')
+		str++;
+	return (*str == '\0' || *str == ' ');
+}
 
 void	echo(char *arg)
 {
 	int	skip_newline;
 
 	skip_newline = 0;
-	while (ft_strncmp(arg, "-n", 2) == 0)
+	if (!arg)
 	{
-		arg += 2;
+		printf("\n");
+		return ;
+	}
+	while (*arg == ' ')
+		arg++;
+	while (is_n_flag(arg))
+	{
 		skip_newline = 1;
+		while (*arg != ' ' && *arg != '\0')
+			arg++;
 		while (*arg == ' ')
 			arg++;
 	}

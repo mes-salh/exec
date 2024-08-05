@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 02:10:51 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/08/03 00:58:13 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/08/04 01:19:12 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_env	*ft_lstnew(char *key, char *value)
 	ptr = (t_env *)malloc(sizeof(t_env));
 	if (!ptr)
 		return (NULL);
-	ptr->key = key;
-	ptr->value = value;
+	ptr->key = strdup(key);
+	ptr->value = strdup(value);
 	ptr->next = NULL;
 	return (ptr);
 }

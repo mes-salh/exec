@@ -6,7 +6,7 @@
 #    By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/02 02:46:03 by mes-salh          #+#    #+#              #
-#    Updated: 2024/08/03 05:49:05 by mes-salh         ###   ########.fr        #
+#    Updated: 2024/08/04 23:27:07 by mes-salh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 HEADER = exec/minishell.h
 

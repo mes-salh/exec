@@ -6,7 +6,7 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 01:36:25 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/08/03 05:48:43 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/08/05 22:50:15 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ size_t	ft_strlen(const char *s);
 int		ft_strcmp(char	*s1, char *s2);
 t_env	*envinit(char **env);
 void	get_cwd(void);
-void	change_dir(char *temp);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strtrim(const char *s1, const char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -49,4 +48,9 @@ void	echo(char *arg);
 void	export(t_env **env, char *arg);
 void	ft_lstdelone(t_env *lst, void (*del)(void*));
 void	unset(t_env **envp, char *arg);
+void	change_dir(char *temp, t_env **envp);
+void	update_env(t_env **envp, const char *key, const char *value);
+void	export_notargs(t_env **envp);
+char	*ft_strjoin(char *s1, char *s2);
+void	export_sort_alpha(t_env **envp);
 #endif

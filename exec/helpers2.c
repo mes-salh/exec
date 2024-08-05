@@ -6,11 +6,39 @@
 /*   By: mes-salh <mes-salh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 00:49:05 by mes-salh          #+#    #+#             */
-/*   Updated: 2024/08/03 05:44:26 by mes-salh         ###   ########.fr       */
+/*   Updated: 2024/08/05 05:12:13 by mes-salh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	size_t	lens;
+	size_t	i;
+	size_t	j;
+	char	*str;
+
+	i = 0;
+	j = 0;
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
+	lens = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(lens + 1);
+	if (!str)
+		return (NULL);
+	while (s1[j] != '\0')
+		str[i++] = s1[j++];
+	j = 0;
+	while (s2[j] != '\0')
+		str[i++] = s2[j++];
+	str[i] = '\0';
+	return (str);
+}
 
 char	*trim_spaces(const char *str)
 {
